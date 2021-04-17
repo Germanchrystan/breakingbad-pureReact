@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.12);
+    height: 200px;
+}
+
+.quote{
+    font-style: italic;
+}
+
+.author{
+    text-align: right;
+}
+
+.series{
+    text-align: right;
+}
+

@@ -1,33 +1,23 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import CharacterGrid from './components/characters/CharacterGrid.js';
-import Header from './components/ui/Header.js';
-import Search from './components/ui/Search.js';
-import './App.css';
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+import './App.css'
 
-const App = () => {
-  const [items, setitems] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [query, setQuery] = useState('');
+import Home from './components/Home.js'
+import Header from './components/ui/Header.js'
+import Characters from './components/Characters.js'
+import CharacterDetail from './components/CharacterDetail.js'
+import EpisodeDetail from './components/EpisodeDetail';
 
-  useEffect(()=> {
-    const fetchItems = async () => {
-      const result = await axios(`https://www.breakingbadapi.com/api/characters?name=${query}`)
-
-      console.log(result.data);
-      setitems(result.data);
-      setIsLoading(false);
-    }
-    fetchItems();
-  }, [query])
-
+function App (){
   return (
-    <div className="container">
-      <Header/>
-      <Search getQuery={(q) =>setQuery(q) }/>
-      <CharacterGrid isLoading={isLoading} items={items}/>
-    </div>
-  );
-}
+      <BrowserRouter>
+        <Route path="/" component={Header}/>
+        <Route path="/" exact component={Home}/>
+        <Route path="/characters" exact component={Characters}/>
+        <Route path="/characters/:id" component={CharacterDetail}/>
+        <Route path="/episodes/:id" component={EpisodeDetail}/>
+      </BrowserRouter>
+    )
 
+}
 export default App;

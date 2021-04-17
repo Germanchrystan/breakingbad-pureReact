@@ -1,11 +1,11 @@
 import React from 'react';
 import CharacterItem from './CharacterItem.js'
-import Spinner from '../ui/spinner.js'
+import Spinner from '../spinner.js'
 
 
 const CharacterGrid = ({items, isLoading}) => {
     return isLoading ? (
-        <Spinner/>
+        <h1></h1>
     ) : (
         <section className='cards'>
             {items.map((item) => (
@@ -16,3 +16,16 @@ const CharacterGrid = ({items, isLoading}) => {
 }
 
 export default CharacterGrid;
+
+//OPERADOR TERNARIO
+/*
+isLoading ? ......(SI ES TRUE) : (Si)
+*/
+
+/*
+if(isLoading){
+    .....(SI es true)
+} else {
+    .....(si es false)
+}
+*/

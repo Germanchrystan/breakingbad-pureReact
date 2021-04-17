@@ -1,0 +1,21 @@
+.detailsContainer{
+    display: flex;
+    width: 80%;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.name {
+    text-align: center;
+}
+
+
+.img{
+    width: 40%;
+
+}
+
+.img img{
+    width: 300px;
+    margin-left: auto;
+}
